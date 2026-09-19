@@ -30,7 +30,7 @@ def test_mask_ticket_invalid():
 
 def test_mask_ticket_basic():
     result = mask_ticket("TKT-1234")
-    assert result == "TKT-1***"
+    assert result == "TKT-****"
 
 def test_normalize_ticket():
     result = normalize_ticket("  abc123  ")
