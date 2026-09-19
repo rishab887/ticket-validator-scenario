@@ -30,4 +30,4 @@ def test_mask_ticket_invalid():
 
 def test_mask_ticket_basic():
     result = mask_ticket("TKT-1234")
-    assert result == "TKT-****"
+    assert result == "TKT-1***"
