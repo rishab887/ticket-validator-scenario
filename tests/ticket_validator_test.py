@@ -31,3 +31,22 @@ def test_mask_ticket_invalid():
 def test_mask_ticket_basic():
     result = mask_ticket("TKT-1234")
     assert result == "TKT-1***"
+
+def test_normalize_ticket():
+    result = normalize_ticket("  abc123  ")
+    assert result == "TKT-ABC123"
+
+
+def test_normalize_ticket_already_prefixed():
+    result = normalize_ticket("  tkt-1234  ")
+    assert result == "TKT-1234"
+
+
+def test_normalize_ticket_non_string():
+    with pytest.raises(TypeError):
+        normalize_ticket(1234)
+
+
+def test_mask_ticket_short_number():
+    result = mask_ticket("TKT-12")
+    assert result == "TKT-**"
