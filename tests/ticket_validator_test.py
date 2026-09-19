@@ -27,7 +27,7 @@ def test_mask_ticket_invalid():
 
 # This test is intentionally disabled.
 # DO NOT enable it yet.
-#
-# def test_mask_ticket_basic():
-#     result = mask_ticket("TKT-1234")
-#     assert result == "TKT-****"
+
+def test_mask_ticket_basic():
+    result = mask_ticket("TKT-1234")
+    assert result == "TKT-****"
